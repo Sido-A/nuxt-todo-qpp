@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.progress {
+  @apply border text-white p-2 align-middle flex-1 w-full;
+}
+
+.form-control:focus-within label {
+  @apply border border-gray-900;
+}
