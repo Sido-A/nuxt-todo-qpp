@@ -26,7 +26,6 @@
 import Layout from "@/layouts/default.vue";
 import { ref } from "vue";
 import { useTodoStore } from "@/stores/todo";
-import TodoComp from "@/components/TodoComp.vue";
 
 const store = useTodoStore();
 const newTodo = ref("");
