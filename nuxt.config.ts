@@ -2,7 +2,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss"],
+  modules: [
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "@nuxtjs/tailwindcss",
+  ],
   pinia: {
     autoImports: ["defineStore", ["defineStore", "definePiniaStore"]],
   },
