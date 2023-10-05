@@ -12,7 +12,7 @@
           id="todo"
           required
           v-model="newTodo"
-          class="flex-1 w-100 p-1 outline-0"
+          class="flex-1 w-100 p-1 outline-none"
           type="text"
         />
         <button class="px-3 py-1 bg-green-500 text-white">Add</button>
