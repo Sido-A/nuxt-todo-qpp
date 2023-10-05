@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .progress {
-  @apply border text-white p-2 align-middle flex-1 w-full;
+  @apply text-white p-2 align-middle flex-1 w-full;
 }
 
 .form-control:focus-within label {

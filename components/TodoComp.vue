@@ -24,14 +24,14 @@
         </p>
         <div>
           <button
-            class="border bg-green-500 text-white px-2 align-middle"
+            class="bg-green-500 text-white px-2 align-middle"
             @click="toggleComplete(todo.id)"
           >
             {{ todo.completed ? "元に戻す" : "達成" }}
           </button>
 
           <button
-            class="border bg-red-500 text-white px-2 align-middle"
+            class="bg-red-500 text-white px-2 align-middle"
             @click="deleteTodo(todo.id)"
           >
             削除
