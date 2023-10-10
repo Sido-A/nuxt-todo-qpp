@@ -1,29 +1,22 @@
 import { v4 as uuidv4 } from "uuid";
-import { ITodo } from "@/interfaces";
+import { ITodo, ICompletionCount } from "@/interfaces";
 
 export const useTodoStore = defineStore(
   "todo",
   () => {
     const todoList = ref<Array<ITodo>>([]);
 
-    function countInComplete(): number {
-      let sum = 0;
-      todoList.value.forEach((todo) => {
-        if (!todo.completed) {
-          sum += 1;
-        }
-      });
-      return sum;
-    }
+    function countCompletion(): ICompletionCount {
+      let completed = 0;
+      let inComplete = 0;
 
-    function countCompleted(): number {
-      let sum = 0;
       todoList.value.forEach((todo) => {
         if (todo.completed) {
-          sum += 1;
+          completed += 1;
         }
       });
-      return sum;
+      inComplete = todoList.value.length - completed;
+      return { completed, inComplete };
     }
 
     function addNewTodo(newTodo: string): Array<ITodo> {
@@ -55,8 +48,7 @@ export const useTodoStore = defineStore(
       addNewTodo,
       toggleComplete,
       deleteTodo,
-      countInComplete,
-      countCompleted,
+      countCompletion,
     };
   },
   { persist: true }

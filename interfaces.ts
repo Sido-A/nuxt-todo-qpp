@@ -3,3 +3,8 @@ export interface ITodo {
   text: string;
   completed: boolean;
 }
+
+export interface ICompletionCount {
+  completed: number;
+  inComplete: number;
+}

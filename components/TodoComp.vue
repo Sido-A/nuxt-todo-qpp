@@ -4,10 +4,10 @@
       class="flex flex-col sm:flex-row justify-evenly items-center px-2 my-5 mx-2 sm:mx-auto"
     >
       <div class="bg-green-500 progress">
-        達成数: <span class="font-bold">{{ countCompleted() }}</span>
+        達成数: <span class="font-bold">{{ counts.completed }}</span>
       </div>
       <div class="bg-gray-500 progress">
-        未達成数: <span class="font-bold">{{ countInComplete() }}</span>
+        未達成数: <span class="font-bold">{{ counts.inComplete }}</span>
       </div>
     </div>
     <ul class="overflow-y-auto min-h-[10rem] max-h-[30rem] px-2 mx-2 sm:pl-0">
@@ -47,7 +47,7 @@ import { storeToRefs } from "pinia";
 import { useTodoStore } from "@/stores/todo";
 
 const todoStore = useTodoStore();
-const { toggleComplete, deleteTodo, countInComplete, countCompleted } =
-  todoStore;
+const { toggleComplete, deleteTodo, countCompletion } = todoStore;
+const counts = computed(() => countCompletion());
 const { todoList } = storeToRefs(todoStore);
 </script>
