@@ -24,7 +24,6 @@
 
 <script setup lang="ts">
 import Layout from "@/layouts/default.vue";
-import { ref } from "vue";
 import { useTodoStore } from "@/stores/todo";
 
 const store = useTodoStore();
